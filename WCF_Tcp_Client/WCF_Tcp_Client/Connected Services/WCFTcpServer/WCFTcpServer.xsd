@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCF_Tcp_Server" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCF_Tcp_Server" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="WCFMessageKind">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="State" />
+      <xs:enumeration value="Message" />
+      <xs:enumeration value="InsertClient" />
+      <xs:enumeration value="RemoveClient" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WCFMessageKind" nillable="true" type="tns:WCFMessageKind" />
+</xs:schema>

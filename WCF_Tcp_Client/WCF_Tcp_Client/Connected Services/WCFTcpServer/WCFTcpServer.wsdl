@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WCFTcpServer" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IWCFTcpServer_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://150.1.13.166:1907/WCFTcpServer?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://150.1.13.166:1907/WCFTcpServer?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://150.1.13.166:1907/WCFTcpServer?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCF_Tcp_Server" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWCFTcpServer_StartService_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartService" />
+  </wsdl:message>
+  <wsdl:message name="IWCFTcpServer_StartService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFTcpServer_StopService_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopService" />
+  </wsdl:message>
+  <wsdl:message name="IWCFTcpServer_StopService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFTcpServer_SetDataToServer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetDataToServer" />
+  </wsdl:message>
+  <wsdl:message name="IWCFTcpServer_SetDataToServer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDataToServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFTcpServer_SetDataToClient_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:SetDataToClient" />
+  </wsdl:message>
+  <wsdl:message name="IWCFTcpServer_SetDataToClient_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:SetDataToClientResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWCFTcpServer">
+    <wsdl:operation name="StartService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFTcpServer/StartService" message="tns:IWCFTcpServer_StartService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFTcpServer/StartServiceResponse" message="tns:IWCFTcpServer_StartService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFTcpServer/StopService" message="tns:IWCFTcpServer_StopService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFTcpServer/StopServiceResponse" message="tns:IWCFTcpServer_StopService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDataToServer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFTcpServer/SetDataToServer" message="tns:IWCFTcpServer_SetDataToServer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFTcpServer/SetDataToServerResponse" message="tns:IWCFTcpServer_SetDataToServer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDataToClient">
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFTcpServer/SetDataToClient" message="tns:IWCFTcpServer_SetDataToClient_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFTcpServer/SetDataToClientResponse" message="tns:IWCFTcpServer_SetDataToClient_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IWCFTcpServer" type="tns:IWCFTcpServer">
+    <wsp:PolicyReference URI="#NetTcpBinding_IWCFTcpServer_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="StartService">
+      <soap12:operation soapAction="http://tempuri.org/IWCFTcpServer/StartService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopService">
+      <soap12:operation soapAction="http://tempuri.org/IWCFTcpServer/StopService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDataToServer">
+      <soap12:operation soapAction="http://tempuri.org/IWCFTcpServer/SetDataToServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDataToClient">
+      <soap12:operation soapAction="http://tempuri.org/IWCFTcpServer/SetDataToClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WCFTcpServer">
+    <wsdl:port name="NetTcpBinding_IWCFTcpServer" binding="tns:NetTcpBinding_IWCFTcpServer">
+      <soap12:address location="net.tcp://150.1.13.166/WCFTcpServer" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://150.1.13.166/WCFTcpServer</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

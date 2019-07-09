@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fb625327-3fef-4956-beb4-c897f7b96d49" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://150.1.13.166:1907/WCFTcpServer" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WCFTcpServer.xsd" MetadataType="Schema" ID="c36133ea-614e-4363-acb0-e1725fb27644" SourceId="1" SourceUrl="http://150.1.13.166:1907/WCFTcpServer?xsd=xsd2" />
+    <MetadataFile FileName="WCFTcpServer1.xsd" MetadataType="Schema" ID="74aac5f0-df5e-42cd-90d8-5813f6670c51" SourceId="1" SourceUrl="http://150.1.13.166:1907/WCFTcpServer?xsd=xsd0" />
+    <MetadataFile FileName="WCFTcpServer.wsdl" MetadataType="Wsdl" ID="20fb01c0-9b12-4763-b0ef-f47bae0a20a3" SourceId="1" SourceUrl="http://150.1.13.166:1907/WCFTcpServer?wsdl" />
+    <MetadataFile FileName="WCFTcpServer.disco" MetadataType="Disco" ID="8bf57370-4324-4ba0-a5ee-0e516d10da30" SourceId="1" SourceUrl="http://150.1.13.166:1907/WCFTcpServer?disco" />
+    <MetadataFile FileName="WCFTcpServer2.xsd" MetadataType="Schema" ID="a28efc35-4714-433e-8d6e-8fdf6569711a" SourceId="1" SourceUrl="http://150.1.13.166:1907/WCFTcpServer?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
